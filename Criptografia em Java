@@ -1,0 +1,19 @@
+import java.util.Base64;
+import java.util.Scanner;
+
+public class Base64Encoder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o texto a ser codificado: ");
+        String inputText = scanner.nextLine();
+        
+        // Codifica o texto para Base64
+        byte[] encodedBytes = Base64.getEncoder().encode(inputText.getBytes());
+        String encodedText = new String(encodedBytes);
+        
+        System.out.println("Texto codificado em Base64: " + encodedText);
+        
+        scanner.close();
+    }
+}
